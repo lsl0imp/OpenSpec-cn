@@ -4,6 +4,8 @@ import { OPENSPEC_DIR_NAME } from './config.js';
 import { ToolRegistry } from './configurators/registry.js';
 import { SlashCommandRegistry } from './configurators/slash/registry.js';
 import { agentsTemplate } from './templates/agents-template.js';
+import { projectTemplate } from './templates/project-template.js';
+import { chineseMappingTemplate } from './templates/chinese-mapping-template.js';
 
 export class UpdateCommand {
   async execute(projectPath: string): Promise<void> {
@@ -13,15 +15,22 @@ export class UpdateCommand {
 
     // 1. Check openspec directory exists
     if (!await FileSystemUtils.directoryExists(openspecPath)) {
-      throw new Error(`No OpenSpec directory found. Run 'openspec init' first.`);
+      throw new Error(`No OpenSpec directory found. Run 'openspeccn init' first.`);
     }
 
     // 2. Update AGENTS.md (full replacement)
     const agentsPath = path.join(openspecPath, 'AGENTS.md');
-
     await FileSystemUtils.writeFile(agentsPath, agentsTemplate);
 
-    // 3. Update existing AI tool configuration files only
+    // 3. Update project.md (full replacement)
+    const projectFilePath = path.join(openspecPath, 'project.md');
+    await FileSystemUtils.writeFile(projectFilePath, projectTemplate());
+
+    // 4. Update CHINESE_MAPPING.md (full replacement)
+    const chineseMappingPath = path.join(openspecPath, 'CHINESE_MAPPING.md');
+    await FileSystemUtils.writeFile(chineseMappingPath, chineseMappingTemplate);
+
+    // 5. Update existing AI tool configuration files only
     const configurators = ToolRegistry.getAll();
     const slashConfigurators = SlashCommandRegistry.getAll();
     const updatedFiles: string[] = [];
@@ -88,7 +97,7 @@ export class UpdateCommand {
     }
 
     const summaryParts: string[] = [];
-    const instructionFiles: string[] = ['openspec/AGENTS.md'];
+    const instructionFiles: string[] = ['openspec/AGENTS.md', 'openspec/project.md', 'openspec/CHINESE_MAPPING.md'];
 
     if (updatedFiles.includes('AGENTS.md')) {
       instructionFiles.push(

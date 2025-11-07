@@ -1,5 +1,6 @@
 import { agentsTemplate } from './agents-template.js';
 import { projectTemplate, ProjectContext } from './project-template.js';
+import { chineseMappingTemplate } from './chinese-mapping-template.js';
 import { claudeTemplate } from './claude-template.js';
 import { clineTemplate } from './cline-template.js';
 import { costrictTemplate } from './costrict-template.js';
@@ -21,6 +22,10 @@ export class TemplateManager {
       {
         path: 'project.md',
         content: projectTemplate(context)
+      },
+      {
+        path: 'CHINESE_MAPPING.md',
+        content: chineseMappingTemplate
       }
     ];
   }

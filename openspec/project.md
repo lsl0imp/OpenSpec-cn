@@ -1,6 +1,8 @@
-# OpenSpec Project Overview
+# OpenSpec 项目概览
 
-A minimal CLI tool that helps developers set up OpenSpec file structures and keep AI instructions updated. The AI tools themselves handle all the change management complexity by working directly with markdown files.
+一个最小化的 CLI 工具，帮助开发者设置 OpenSpec 文件结构并保持 AI 指令更新。AI 工具本身通过直接处理 markdown 文件来处理所有变更管理的复杂性。
+
+> **重要提示**：本规范文档中文为主，关键名词保留英文。请参照 `openspec/CHINESE_MAPPING.md` 了解中英文对应关系。
 
 ## Technology Stack
 - Language: TypeScript
@@ -13,11 +15,11 @@ A minimal CLI tool that helps developers set up OpenSpec file structures and kee
 ## Project Structure
 ```
 src/
-├── cli/        # CLI command implementations
-├── core/       # Core OpenSpec logic (templates, structure)
-└── utils/      # Shared utilities (file operations, rollback)
+├── cli/        # CLI 命令实现
+├── core/       # 核心 OpenSpec 逻辑（模板、结构）
+└── utils/      # 共享工具（文件操作、回滚）
 
-dist/           # Compiled output (gitignored)
+dist/           # 编译输出（gitignored）
 ```
 
 ## Conventions

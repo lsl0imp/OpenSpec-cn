@@ -1,6 +1,6 @@
 {
   "name": "@fission-ai/openspec",
-  "version": "0.14.0",
+  "version": "0.14-cn.1",
   "description": "AI-native system for spec-driven development",
   "keywords": [
     "openspec",
@@ -27,7 +27,7 @@
     }
   },
   "bin": {
-    "openspec": "./bin/openspec.js"
+    "openspeccn": "./bin/openspec.js"
   },
   "files": [
     "dist",
