@@ -15,7 +15,7 @@ export class UpdateCommand {
 
     // 1. Check openspec directory exists
     if (!await FileSystemUtils.directoryExists(openspecPath)) {
-      throw new Error(`No OpenSpec directory found. Run 'openspeccn init' first.`);
+      throw new Error(`No OpenSpec directory found. Run 'openspec init' first.`);
     }
 
     // 2. Update AGENTS.md (full replacement)

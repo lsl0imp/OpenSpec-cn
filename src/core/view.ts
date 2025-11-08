@@ -65,7 +65,7 @@ export class ViewCommand {
     }
 
     console.log('\n' + '═'.repeat(60));
-    console.log(chalk.dim(`\nUse ${chalk.white('openspeccn list --changes')} or ${chalk.white('openspeccn list --specs')} for detailed views`));
+    console.log(chalk.dim(`\nUse ${chalk.white('openspec list --changes')} or ${chalk.white('openspec list --specs')} for detailed views`));
   }
 
   private async getChangesData(openspecDir: string): Promise<{

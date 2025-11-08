@@ -19,7 +19,7 @@ const require = createRequire(import.meta.url);
 const { version } = require('../../package.json');
 
 program
-  .name('openspeccn')
+  .name('openspec')
   .description('AI-native system for spec-driven development')
   .version(version);
 
@@ -126,7 +126,7 @@ const changeCmd = program
 
 // Deprecation notice for noun-based commands
 changeCmd.hook('preAction', () => {
-  console.error('Warning: The "openspeccn change ..." commands are deprecated. Prefer verb-first commands (e.g., "openspeccn list", "openspeccn validate --changes").');
+  console.error('Warning: The "openspec change ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec list", "openspec validate --changes").');
 });
 
 changeCmd
@@ -148,12 +148,12 @@ changeCmd
 
 changeCmd
   .command('list')
-  .description('List all active changes (DEPRECATED: use "openspeccn list" instead)')
+  .description('List all active changes (DEPRECATED: use "openspec list" instead)')
   .option('--json', 'Output as JSON')
   .option('--long', 'Show id and title with counts')
   .action(async (options?: { json?: boolean; long?: boolean }) => {
     try {
-      console.error('Warning: "openspeccn change list" is deprecated. Use "openspeccn list".');
+      console.error('Warning: "openspec change list" is deprecated. Use "openspec list".');
       const changeCommand = new ChangeCommand();
       await changeCommand.list(options);
     } catch (error) {
