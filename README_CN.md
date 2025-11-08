@@ -124,17 +124,23 @@ Kilo Code 会自动发现团队工作流。将生成的文件保存在 `.kilocod
 
 #### 前置要求
 - **Node.js >= 20.19.0** - 使用 `node --version` 检查您的版本
+- 下载发布里的fission-ai-openspec-0.14-cn.1.tgz文件
 
 #### 步骤 1：全局安装 CLI
 
 ```bash
-npm install -g @fission-ai/openspec@latest
+npm install -g fission-ai-openspec-0.14-cn.1.tgz
 ```
 
 验证安装：
 ```bash
 openspec --version
 ```
+返回版本
+```bash
+0.14-cn.1
+```
+
 
 #### 步骤 2：在您的项目中初始化 OpenSpec
 
